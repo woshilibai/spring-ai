@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: ai-demo
+  ai:
+    ollama:
+      base-url: http://localhost:11434 # ollama服务地址， 这就是默认值
+      chat:
+        model: deepseek-r1:7b # 模型名称
+        options:
+          temperature: 0.8 # 模型温度，影响模型生成结果的随机性，越小越稳定
+
+    openai:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      api-key: sk-d29fd69c10474b9fa49566d00dda0de3
+      chat:
+        options:
+          model: qwen-max  # 单模态模型
+#          model: qwen-omni-turbo # 多模态模型
+      embedding:
+        options:
+          model: text-embedding-v3  # 通用文本向量模型
+          dimensions: 1024
+logging:
+  level:
+    org.springframework.ai: debug # AI对话开启debug日志
+    com.evermodel.service: debug # 本项目开启debug日志
