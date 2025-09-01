@@ -137,6 +137,11 @@ public class ChatService {
 
     /**
      * function calling  client
+     * 设定一个体检机构的智能客服助手，可以为用户
+     * 1、提供健康状况的判定
+     * 2、体检套餐查询
+     * 3、体检预约
+     * 以上三个是基于function calling 进行实现
      */
     public String toolsChat(Integer chatId, String prompt){
         return toolsChatClient.prompt()
